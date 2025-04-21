@@ -16,6 +16,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style/style.css" />
 
+    <!-- Swiper JS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- Icon -->
     <link
       rel="stylesheet"
@@ -118,75 +120,79 @@
         <div class="wrapper" style="padding: 8em 6em 4em">
           <h1 class="template-name">Template pilihan</h1>
         </div>
-        <div
-          class="card-container"
-          style="padding-top: 2px; margin-left: 5em"
-        >
-
-        <!-- template 1 -->
-          <div class="template-box">
-            <div class="rate-card">
-              <div class="wrapper">
-                <i class="star fa-solid fa-star"></i>
-                <span>8.1</span>
-              </div>
-            </div>
-            <div class="rate-card2">
-              <div class="wrapper2">
-                <span>14+</span>
-              </div>
-            </div>
+        <div class="container swiper">
+          <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+              <!-- card 1 -->
+              <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                  <img src="/mg/tes.jpg" alt="" class="card-image">
+                  <p class="badge">Developers</p>
+                  <h2 class="tittle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, animi.</h2>
+                  <button class="card-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </a>
+              </li>
+    
+               <!-- card 2 -->
+               <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                  <img src="/mg/tes.jpg" alt="" class="card-image">
+                  <p class="badge">Admin</p>
+                  <h2 class="tittle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, animi.</h2>
+                  <button class="card-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </a>
+              </li>
+              
+               <!-- card 3 -->
+               <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                  <img src="/mg/tes.jpg" alt="" class="card-image">
+                  <p class="badge">Developers</p>
+                  <h2 class="tittle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, animi.</h2>
+                  <button class="card-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </a>
+              </li>
+              
+               <!-- card 4 -->
+               <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                  <img src="/mg/tes.jpg" alt="" class="card-image">
+                  <p class="badge">Developers</p>
+                  <h2 class="tittle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, animi.</h2>
+                  <button class="card-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </a>
+              </li>
+              
+               <!-- card 5 -->
+               <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                  <img src="/mg/tes.jpg" alt="" class="card-image">
+                  <p class="badge">Developers</p>
+                  <h2 class="tittle"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, animi.</h2>
+                  <button class="card-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </a>
+              </li>
+            </ul>
+    
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev swiper-slide-button"></div>
+            <div class="swiper-button-next swiper-slide-button"></div>
           </div>
-
-        <!-- template 2 -->
-          <div class="template-box">
-            <div class="rate-card">
-              <div class="wrapper">
-                <i class="star fa-solid fa-star"></i>
-                <span>9.1</span>
-              </div>
-            </div>
-            <div class="rate-card2">
-              <div class="wrapper2">
-                <span>19+</span>
-              </div>
-            </div>
-          </div>
-
-        <!-- template 3 -->
-          <div class="template-box">
-            <div class="rate-card">
-              <div class="wrapper">
-                <i class="star fa-solid fa-star"></i>
-                <span>9.1</span>
-              </div>
-            </div>
-            <div class="rate-card2">
-              <div class="wrapper2">
-                <span>19+</span>
-              </div>
-            </div>
-          </div>
-
-        <!-- template 4 -->
-          <div class="template-box">
-            <div class="rate-card">
-              <div class="wrapper">
-                <i class="star fa-solid fa-star"></i>
-                <span>9.1</span>
-              </div>
-            </div>
-            <div class="rate-card2">
-              <div class="wrapper2">
-                <span>19+</span>
-              </div>
-            </div>
-          </div>
-
-          
-
         </div>
       </section>
     </section>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -248,6 +248,76 @@ body{
     padding: 10px 0;
 }
 
+.card-wrapper{
+    overflow: hidden;
+    margin: 0 60px 35px;
+    max-width: 1100px;
+}
+.card-list .card-item{
+    list-style: none;
+}
+
+.card-list .card-item .card-link{
+ user-select: none;
+ display: block;
+ background: #c7c6c9;
+ padding: 18px;
+ border-radius: 12px;
+ text-decoration: none;
+ box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-list .card-link .card-image{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+}
+
+.card-list .card-link .badge{
+    color: #f2eaca;
+    background-color: rgb(194, 160, 22);
+    padding: 8px 16px;
+    margin: 16px 0 18px;
+    width: fit-content;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.card-list .card-link .tittle{
+  font-size: 1.19rem;
+  color: black;
+  text-decoration: none;
+}
+
+.card-list .card-link .card-button{
+    width: 35px;
+    height: 35px;
+    color: rgb(194, 160, 22) ;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 30px 0 5px;
+    background-color: #f2eaca ;
+    border-color: #f2eaca;
+    transform: rotate(-45deg);
+}
+
+.card-wrapper .swiper-pagination-bullet{
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+    background: rgb(194, 160, 22);
+}
+
+.card-wrapper .swiper-pagination-bullet-active{
+    opacity: 1;
+}
+.card-wrapper .swiper-slide-button{
+    margin-top: -35px;
+    color: black;
+}
+
 
 
 
