@@ -1,6 +1,6 @@
 new Swiper('.card-wrapper', {
     loop: true,
-    spaceBetween: 30,
+    spaceBetween: 20,
     autoplay: {
       delay: 3000, 
       disableOnInteraction: false,
@@ -31,4 +31,19 @@ new Swiper('.card-wrapper', {
             slidesPerView: 3
         },
     }
+  });
+
+
+// Animation 
+  document.querySelectorAll('a.nav-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#')) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500); 
+      }
+    });
   });

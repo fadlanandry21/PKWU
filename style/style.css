@@ -150,6 +150,17 @@ body{
     position: relative;
     top: 35px;
 }
+.list-card{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 7vw;
+
+}
+
+.list-card .item-card{
+    list-style: none;
+}
 
 .wrapper h1{
     font-size: 35px;
@@ -162,6 +173,7 @@ body{
     letter-spacing: 3px;
 }
 
+/* fav template */
 .template-box{
    border: none;
    background: #c7c6c9;
@@ -185,8 +197,6 @@ body{
     background: #060606;
     padding: 14px 20px;
     margin: 15px 20px;
-    
-    
 
 }
 
@@ -260,6 +270,8 @@ body{
 .card-list .card-item .card-link{
  user-select: none;
  display: block;
+ width: 35rem;
+ height: 20rem;
  background: #c7c6c9;
  padding: 18px;
  border-radius: 12px;
@@ -268,9 +280,9 @@ body{
 }
 
 .card-list .card-link .card-image{
-    width: 100%;
+    width: 50%;
     object-fit: cover;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/9; 
     border-radius: 10px;
 }
 
@@ -320,6 +332,17 @@ body{
 
 
 
-
+/* animasi */
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+  }
+  
+  @keyframes fadeOut {
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+  
 
 
