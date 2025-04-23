@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keranjang Belanja Interaktif</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #000;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cart-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .cart-title {
+      color: #fff;
+      font-weight: 600;
+      font-size: 32px;
+    }
+
+    .cart-box, .summary-box {
+      background-color: #d9d9d9;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .qty-box {
+      background-color: #000;
+      color: #fff;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-weight: bold;
+      border: none;
+    }
+
+    .qty-input {
+      width: 40px;
+      text-align: center;
+      background-color: #d9d9d9;
+      border: none;
+    }
+
+    .btn-black {
+      background-color: #000;
+      color: #fff;
+      border-radius: 999px;
+    }
+
+    .promo-input {
+      border-radius: 999px;
+      background-color: #d9d9d9;
+      border: 1px solid #ccc;
+      padding: 8px 20px;
+    }
+
+    .summary-label {
+      font-weight: 600;
+    }
+
+    .proceed-btn {
+      border-radius: 999px;
+      padding: 10px 30px;
+      font-weight: 600;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container cart-container">
+  <h2 class="cart-title mb-4">Keranjang Belanja</h2>
+  <div class="row g-4">
+    <!-- Cart Items -->
+    <div class="col-md-8" id="cart-items">
+      <!-- Cart Item -->
+      <div class="cart-box d-flex align-items-center" data-price="399">
+        <div style="width: 150px; height: 120px; background: #000;" class="me-3"></div>
+        <div class="flex-grow-1">
+          <div class="fw-semibold">Name Template</div>
+          <div class="d-flex align-items-center mt-2">
+            <span class="me-2">Qty</span>
+            <div class="d-flex align-items-center">
+              <button class="qty-box decrement">-</button>
+              <input type="text" class="qty-input mx-1 quantity" value="1" readonly>
+              <button class="qty-box increment">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-auto price">$399</div>
+      </div>
+
+      <!-- Cart Item 2 -->
+      <div class="cart-box d-flex align-items-center" data-price="399">
+        <div style="width: 150px; height: 120px; background: #000;" class="me-3"></div>
+        <div class="flex-grow-1">
+          <div class="fw-semibold">Name Domain</div>
+          <div class="d-flex align-items-center mt-2">
+            <span class="me-2">Qty</span>
+            <div class="d-flex align-items-center">
+              <button class="qty-box decrement">-</button>
+              <input type="text" class="qty-input mx-1 quantity" value="1" readonly>
+              <button class="qty-box increment">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-auto price">$399</div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="col-md-4">
+      <div class="summary-box">
+        <div class="d-flex mb-3">
+          <input type="text" class="form-control promo-input me-2" placeholder="Promo Code">
+          <button class="btn btn-black">Cari</button>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span class="summary-label">Subtotal</span>
+          <span id="subtotal">$798</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span class="summary-label">Discount</span>
+          <span id="discount">$0</span>
+        </div>
+        <div class="d-flex justify-content-between mb-4">
+          <span class="summary-label">Order Total</span>
+          <span id="total">$798</span>
+        </div>
+        <button class="btn btn-black w-100 proceed-btn">Proceed To Payment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const updateTotals = () => {
+    const cartItems = document.querySelectorAll('.cart-box');
+    let subtotal = 0;
+    cartItems.forEach(item => {
+      const price = parseFloat(item.getAttribute('data-price'));
+      const qty = parseInt(item.querySelector('.quantity').value);
+      item.querySelector('.price').textContent = `$${(price * qty).toFixed(0)}`;
+      subtotal += price * qty;
+    });
+
+    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(0)}`;
+    document.getElementById('discount').textContent = `$0`;
+    document.getElementById('total').textContent = `$${subtotal.toFixed(0)}`;
+  };
+
+  document.querySelectorAll('.increment').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.parentElement.querySelector('.quantity');
+      input.value = parseInt(input.value) + 1;
+      updateTotals();
+    });
+  });
+
+  document.querySelectorAll('.decrement').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.parentElement.querySelector('.quantity');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+        updateTotals();
+      }
+    });
+  });
+
+  updateTotals(); // initial call
+</script>
+
+</body>
+</html>
